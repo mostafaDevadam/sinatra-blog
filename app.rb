@@ -4,29 +4,21 @@ require 'dotenv/load'
 require 'jwt'
 require 'json'
 require_relative './routes/routes'
-
-#
-require_relative 'models/post.model'
-#
-
+require 'date'
 #
 Mongoid.load!(File.join(File.dirname(__FILE__), 'config', 'mongoid.yml'))
 #
 
 ### env
-host = ENV['db_host']
-name = ENV['db_name']
-puts name, host
+#host = ENV['db_host']
+#name = ENV['db_name']
+#puts name, host
 
 
-###
-# routes
+class App < Sinatra::Base
 
 
-#
-get '/' do
-# here we specify the content type to respond with
-  content_type :json
-
-  { item: 'Red Dead Redemption 2', price: 19.79, status: 'Available'  }.to_json
+  puts "App"
+  Routes.run!
+  run!
 end

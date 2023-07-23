@@ -1,14 +1,10 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'json'
+require_relative '../models/post.model'
 
 
-posts = [{title: "First Post", body: "content of first post"}]
-
-
-class PostRouter < Sinatra:Base
-
-
+class PostRouter < Sinatra::Base
 
   post '/posts' do
     content_type :json
@@ -17,11 +13,14 @@ class PostRouter < Sinatra:Base
     post_.to_json
   end
 
-
-
   get '/posts' do
-    content_type :json
+    #content_type :json
     Post.all.to_json
+  end
+
+  get '/posts/:_id' do
+    post_ = Post.find(params[:_id])
+    post_.to_json
   end
 
 

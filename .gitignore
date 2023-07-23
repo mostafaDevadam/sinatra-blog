@@ -1,0 +1,6 @@
+
+/config/
+notes.txt
+.env
+Gemfile.lock
+/services/

@@ -13,6 +13,7 @@ gem 'sinatra-base', '~> 1.4'
 gem 'sinatra-rest-base', '~> 1.0', '>= 1.0.5'
 #
 gem 'date'
+gem 'uuid'
 #
 gem 'mongoid', '~> 5.1', '>= 5.1.3'
 gem 'sinatra-mongoid'
